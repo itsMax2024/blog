@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: #ffffff;
+  --secondary: #1d1f20;
+  --background-color: rgba(8, 0, 58, 0.7);
+  --base-variant: #8b8d9467;
+  --bg: #202425;
+  --bg-form: #000f3831;
+  --gradient: rgba(8, 0, 58, 0.7);
+  --text-color-1: #d1d1d1;
+  --text-color-2: black;
+}
+
+.darkmode {
+  --bg: #070b1d;
+  --primary: #3a435d;
+  --secondary: white;
+  --base-variant: #101425;
+  --gradient: rgba(5, 1, 31, 0.877);
+  --bg-form: #3a435d;
+  --text-color: #aaa8a8;
+  transition: 0.5s ease;
+}
+
+.order-1 {
+  order: 1;
+}
+.order-2 {
+  order: 2;
+}
+.order-3 {
+  order: 3;
+}
+.order-4 {
+  order: 4;
+}
+.order-5 {
+  order: 5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  transition: 1s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.btn {
+  background-color: #fff;
+  color: #212121;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dark-btn {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* media  */
+
+@media (max-width: 1200px) {
+  .btn {
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+}

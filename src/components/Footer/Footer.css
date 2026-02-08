@@ -1,0 +1,10 @@
+footer section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 200px;
+  background-color: #1d1f20;
+  margin-top: 400px;
+  border-top: 1px solid rgb(151, 151, 151);
+  color: #2ad87f;
+}

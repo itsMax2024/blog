@@ -1,0 +1,136 @@
+.article-page {
+  padding: 100px 200px;
+}
+
+.article-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+}
+
+.article-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 20px;
+  height: fit-content;
+  margin-top: 200px;
+}
+.article-sidebar img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.article-article {
+  position: relative;
+  height: fit-content;
+}
+
+.sidebar-article-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+}
+
+article {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 30px;
+  color: white;
+  text-align: right;
+  margin-bottom: 200px;
+}
+
+article h1 {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+article img {
+  min-width: 300px;
+  width: 900px;
+  border-radius: 2%;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.author-avatar {
+  min-width: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+article p {
+  text-align: justify;
+  hyphens: auto;
+  direction: rtl;
+  line-height: 2rem;
+}
+
+.post-context {
+  padding: 0px 50px;
+}
+
+.post-description {
+  margin-bottom: 30px;
+}
+
+.related-section {
+}
+
+.related-articles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.related-articles a {
+  height: fit-content;
+  border: none;
+}
+
+.related-article {
+  margin: 0;
+  padding: 20px 20px;
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1d1f20;
+}
+
+.related-article img {
+  width: 200px;
+  border-radius: 10px;
+}

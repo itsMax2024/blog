@@ -1,0 +1,15 @@
+.title {
+  border-right: 10px solid #2ad87f;
+  text-align: right;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.title h4 {
+  font-size: 28px;
+  color: white;
+}

@@ -1,0 +1,140 @@
+.main {
+  margin: 20px 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+
+  gap: 80px;
+}
+
+.article {
+  position: relative;
+}
+
+.article a {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 750px;
+  height: 200px;
+  border-bottom: 1px solid rgb(112, 112, 112);
+  padding-top: 10px;
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  color: white;
+}
+.article-context {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+.article-context img {
+  width: 25px;
+}
+
+.article-img img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.article-info {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+}
+
+.article-info img {
+  width: 15px;
+  order: 2;
+}
+
+.comments-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.date-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+.top-article {
+  position: relative;
+  height: fit-content;
+}
+
+.top-article-context {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.top-article-context h2 {
+  font-size: 30px;
+  color: white;
+  font-family: "Vazirmatn", sans-serif;
+}
+
+.top-article img {
+  width: 650px;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: 0.4s ease;
+}
+
+.top-article img:hover {
+  filter: brightness(100%);
+}
+
+.top-article-info-wrapper img {
+  width: 20px;
+}
+
+.top-article-info {
+}
+
+.top-article-info-wrapper {
+  padding-right: 50px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.top-article-date-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100px;
+  white-space: nowrap;
+}
+.top-article-time-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}

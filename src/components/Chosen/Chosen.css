@@ -1,0 +1,12 @@
+.chosen-posts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 200px;
+  padding: 20px 10px;
+}
+
+.chosen {
+  margin: 20px 200px;
+}

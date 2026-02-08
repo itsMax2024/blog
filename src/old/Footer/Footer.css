@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 80px auto 40px;
+  border-top: 1px solid var(--secondary);
+  width: 80%;
+  padding-top: 30px;
+  color: var(--secondary);
+}
+
+/* media  */
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+  }
+}
