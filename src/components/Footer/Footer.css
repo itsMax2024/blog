@@ -6,5 +6,26 @@ footer section {
   background-color: #1d1f20;
   margin-top: 400px;
   border-top: 1px solid rgb(151, 151, 151);
-  color: #2ad87f;
+  color: var(--primary);
+  position: absolute;
+  bottom: 1;
+  right: 0;
+  left: 0;
+  direction: rtl;
+}
+
+.footer-info {
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
+.footer-links li {
+  list-style: none;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }

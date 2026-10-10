@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getPosts } from "../../api";
+import { getLatestPosts } from "../../api";
 
 import "./Hero.css";
 
@@ -10,29 +12,21 @@ const Hero = () => {
     description: string;
     image: string;
   };
-  const posts = [
-    {
-      id: "1",
-      title: "اولین پست من",
-      description: "به نام خداوند جان و خرد، کزان برتر اندیشه بر نگذرد",
-      image: "/assets/gaming/gallery_1.png",
-    },
-    {
-      id: "2",
-      title: "دومین پست من",
-      description: "به نام خداوند جان و خرد، کزان برتر اندیشه بر نگذرد",
-      image: "/assets/gaming/gallery_2.png",
-    },
-    {
-      id: "3",
-      title: "سومین پست من",
-      description: "کار عمیق",
 
-      image: "/assets/gaming/gallery_3.png",
-    },
-  ];
-
+  const [posts, setPosts] = useState([]);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const allPosts = await getLatestPosts();
+        setPosts(allPosts);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    loadPosts();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,7 +35,7 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [posts]);
 
   return (
     <section className="hero">
@@ -51,8 +45,18 @@ const Hero = () => {
       >
         {posts.map((post) => (
           <div className="slide" key={post.id}>
+            <img
+              className="slide-img-bg"
+              src={`http://127.0.0.1:8000${post.image}`}
+              alt={post.title}
+            />
+
             <Link to={`/post/${post.id}`}>
-              <img src={post.image} alt={post.title} />
+              <img
+                className="slide-img"
+                src={`http://127.0.0.1:8000${post.image}`}
+                alt={post.title}
+              />
             </Link>
 
             <div className="slide-content">

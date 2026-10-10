@@ -6,17 +6,22 @@ const Footer = () => {
     <footer>
       <section>
         <div className="footer-links">
-          <p>© All rights are reserved 2026.</p>
           <ul>
             <li>
-              <a href="">Terms of Service</a>
+              <a href="">تماس با ما</a>
             </li>
             <li>
-              <a href="">Privacy Policy</a>
+              <a href="">درباره ما</a>
             </li>
+            <p>© کپی بدون مجوز مکتوب ممنوع است </p>
           </ul>
+          <div className="footer-info">Developed by MaxCoding</div>
         </div>
-        <div className="footer-info">Developed by Max</div>
+        <div className="social-links">
+          <img src="/assets/icon-instagram.svg" alt="" />
+          <img src="/assets/icon-facebook.svg" alt="" />
+          <img src="/assets/icon-twitter.svg" alt="" />
+        </div>
       </section>
     </footer>
   );

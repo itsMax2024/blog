@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../../Title/Title";
 import "../Main.css";
+import { getPosts } from "../../../api";
+import { getLastPage } from "../../../api";
+import NextPage from "../../../pages/NextPage/NextPage";
 
 const AllArticles = () => {
   type posts = {
@@ -10,32 +13,29 @@ const AllArticles = () => {
     description: string;
     image: string;
   };
-  const posts = [
-    {
-      id: "1",
-      title: "اولین پست من",
-      description: "به نام خداوند جان و خرد، کزان برتر اندیشه بر نگذرد",
-      image: "/assets/gaming/gallery_1.png",
-    },
-    {
-      id: "2",
-      title: "دومین پست من",
-      description: "به نام خداوند جان و خرد، کزان برتر اندیشه بر نگذرد",
-      image: "/assets/gaming/gallery_2.png",
-    },
-    {
-      id: "3",
-      title: "سومین پست من",
-      description: "کار عمیق",
-      image: "/assets/gaming/gallery_3.png",
-    },
-    {
-      id: "4",
-      title: "سومین پست من",
-      description: "کار عمیق",
-      image: "/assets/gaming/gallery_4.png",
-    },
-  ];
+
+  const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const allPosts = await getLastPage(1);
+        setPosts(allPosts);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    loadPosts();
+  }, []);
+
+  useEffect(() => {
+    const nextPage = () => {
+      setPage((prev) => prev + 1);
+      console.log(page);
+    };
+  }, []);
+
   return (
     <div className="all-articles">
       <Title title="آخرین مطالب" />
@@ -53,16 +53,26 @@ const AllArticles = () => {
               </div>
               <div className="date-wrapper">
                 <img src="/assets/date.png" alt="" />
-                <p>Created 2 min ago</p>
+                <p>{article.created}</p>
               </div>
             </div>
-
             <div className="article-img">
-              <img src={article.image} alt={article.title} />
+              <img
+                src={`http://127.0.0.1:8000${article.image}`}
+                alt={article.title}
+              />
             </div>
           </Link>
         </div>
       ))}
+      <div className="next-page">
+        <Link to={"page/next-page"}>
+          <span>
+            <img src="/assets/back-icon.png" alt="" />
+            <p>مطالب بیشتر</p>
+          </span>
+        </Link>
+      </div>
     </div>
   );
 };

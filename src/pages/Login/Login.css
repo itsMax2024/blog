@@ -43,6 +43,7 @@
   border: none;
   background-color: #000;
   padding-left: 10px;
+  color: white;
 }
 
 .login-form input:hover {
@@ -110,4 +111,16 @@
 
 .login-login p {
   color: white;
+}
+
+.register-error {
+  color: var(--primary);
+}
+
+.field-error {
+  color: rgb(250, 108, 108);
+}
+
+.error-input {
+  border: 1px solid rgb(250, 108, 108) !important;
 }

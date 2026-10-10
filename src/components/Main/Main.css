@@ -9,6 +9,7 @@
 
 .article {
   position: relative;
+  max-width: 750px;
 }
 
 .article a {
@@ -30,12 +31,29 @@
   gap: 5px;
 }
 .article-context img {
-  width: 25px;
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.article-context h2 {
+  text-align: right;
+  font-size: 18px;
+  transition: 0.1s ease;
+}
+
+.article-context h2:hover {
+  color: var(--text-secondary);
+}
+
+.article-img {
+  padding-top: 10px;
 }
 
 .article-img img {
   width: 300px;
+  height: 160px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .article-info {
@@ -82,14 +100,14 @@
 }
 
 .top-article-context h2 {
-  font-size: 30px;
+  font-size: 22px;
   color: white;
   font-family: "Vazirmatn", sans-serif;
 }
 
-.top-article img {
+.top-article-img {
   width: 650px;
-  height: 100%;
+  height: 365px;
   object-fit: cover;
   filter: brightness(70%);
   transition: 0.4s ease;
@@ -137,4 +155,29 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.next-page {
+  margin-top: 50px;
+  text-align: right;
+  color: white;
+  font-size: 22x;
+}
+
+.next-page span {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 5px;
+}
+
+.next-page img {
+  width: 15px;
 }
