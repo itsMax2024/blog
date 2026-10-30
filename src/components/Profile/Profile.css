@@ -1,0 +1,252 @@
+/* ===== Profile Page ===== */
+
+.profile-section {
+  min-height: 100vh;
+  padding: 70px 24px;
+  background: #14181d;
+  color: #f1f5f9;
+}
+
+.profile-page .user-profile {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ===== Profile Header ===== */
+
+.profile-page .user-profile > .profile-avatar {
+  display: block;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  border: 3px solid #2ad87f;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #222a31;
+  box-shadow: 0 0 0 7px rgba(42, 216, 127, 0.08);
+}
+
+.profile-page .user-profile > h1 {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.profile-page .user-profile > h2 {
+  margin: 8px 0 40px;
+  color: #f8fafc;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* ===== Comments Heading ===== */
+
+.profile-page .user-profile > h3 {
+  margin: 0 0 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2b333c;
+  color: #f8fafc;
+  font-size: 21px;
+  font-weight: 650;
+  direction: rtl;
+}
+
+/* ===== Comment Card ===== */
+
+.profile-page .comment {
+  margin-bottom: 16px;
+  padding: 22px 24px;
+  border: 1px solid #2b333c;
+  border-radius: 16px;
+  background: #1b2128;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.profile-page .comment:hover {
+  border-color: rgba(42, 216, 127, 0.45);
+  background: #1e252d;
+  transform: translateY(-2px);
+}
+
+/* ===== Comment Author & Date ===== */
+
+.profile-page .comment-profile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.profile-page .comment-profile-img {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #35414b;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #252e37;
+}
+
+.profile-page .comment-profile p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-page .comment-profile span {
+  margin-left: auto;
+  color: #8492a2;
+  font-size: 12px;
+}
+
+/* ===== Comment Body ===== */
+
+.profile-page .comment-body {
+  padding-left: 54px;
+}
+
+.profile-page .comment-body p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* ===== Empty State ===== */
+
+.profile-page .user-profile > p {
+  padding: 32px 24px;
+  border: 1px dashed #35414b;
+  border-radius: 14px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ===== Login / Error / Loading States ===== */
+
+.profile-page .profile-not-found,
+.profile-page .profile-section > div:not(.user-profile) {
+  width: 100%;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 36px 24px;
+  border: 1px solid #2b333c;
+  border-radius: 18px;
+  background: #1b2128;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.profile-page .profile-not-found h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+  .profile-page .profile-section {
+    padding: 36px 16px;
+    direction: rtl;
+  }
+
+  .profile-page .user-profile > .profile-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-page .user-profile > h2 {
+    margin-bottom: 32px;
+  }
+
+  .profile-page .user-profile > h3 {
+    font-size: 18px;
+  }
+
+  .profile-page .comment {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+
+  .profile-page .comment-profile {
+    gap: 10px;
+  }
+
+  .profile-page .comment-profile span {
+    width: 100%;
+    margin-left: 52px;
+    margin-top: -6px;
+  }
+
+  .profile-page .comment-body {
+    padding-left: 0;
+  }
+
+  .profile-page .comment-body p {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-page .comment {
+    transition: none;
+  }
+
+  .profile-page .comment:hover {
+    transform: none;
+  }
+}
+
+.profile-page .profile-comment-post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 16px 54px;
+  padding: 12px 14px;
+  border-right: 3px solid #2ad87f;
+  border-radius: 8px 0px 0px 8px;
+  background: rgba(42, 216, 127, 0.06);
+  direction: rtl;
+}
+
+.profile-page .profile-comment-post span {
+  color: #8492a2;
+  font-size: 12px;
+}
+
+.profile-page .profile-comment-post a {
+  color: #2ad87f;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+  direction: rtl;
+}
+
+.profile-page .profile-comment-post a:hover {
+  color: #75f0b0;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .profile-page .profile-comment-post {
+    margin-left: 0;
+  }
+}

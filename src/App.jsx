@@ -9,9 +9,11 @@ import Topics from "./pages/Topics/Topics";
 import NextPage from "./pages/NextPage/NextPage";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Register from "./pages/Register/Register";
+import ProfilePage from "./pages/profilePage/ProfilePage";
 
 const App = () => {
   const [playState, setPlayState] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
 
   return (
     <div className="app">
@@ -24,6 +26,7 @@ const App = () => {
           <Route path="/search/" element={<Search />} />
           <Route path="/topics/:id" element={<Topics />} />
           <Route path="page/next-page" element={<NextPage />} />
+          <Route path="/profile/:id" element={<ProfilePage />} />
         </Routes>
       </AuthProvider>
     </div>

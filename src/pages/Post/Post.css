@@ -299,12 +299,17 @@ article p {
 }
 
 .delete-comment {
-  width: 100px;
-  height: 30 px;
-  background-color: #0f1111;
+  background-color: #0f111100;
   border: none;
   color: red;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-comment img {
+  width: 20px;
 }
 
 .delete-comment:hover {

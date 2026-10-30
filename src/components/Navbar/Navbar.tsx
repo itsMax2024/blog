@@ -115,7 +115,11 @@ const Navbar = ({ isAuthenticated, user, onLogout }) => {
               <a href="">
                 <img src="" alt="" />
               </a>
-              <span className="nav-user-name">خوش آمدید، {user?.username}</span>
+              <a href={`/profile/${user?.id}`}>
+                <span className="nav-user-name">
+                  خوش آمدید، {user?.username}
+                </span>
+              </a>
             </>
           ) : (
             <a href="/login">

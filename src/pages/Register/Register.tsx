@@ -31,24 +31,32 @@ const Register = () => {
     setErrors({});
     setGeneralError("");
 
-    const result = await register(formData);
+    try {
+      const result = await register(formData);
 
-    if (result.success) {
-      navigate("/");
-    } else {
+      if (result.success) {
+        navigate("/");
+        return;
+      }
+
       if (result.error && typeof result.error === "object") {
         setErrors(result.error);
-        // If there's a non-field error (like password mismatch)
-        if (result.error.non_field_errors) {
-          setGeneralError(result.error.non_field_errors[0]);
+
+        const nonFieldError = result.error.non_field_errors?.[0];
+
+        if (nonFieldError) {
+          setGeneralError(nonFieldError);
         }
       } else if (typeof result.error === "string") {
         setGeneralError(result.error);
       } else {
         setGeneralError("Registration failed. Please try again.");
       }
+    } catch {
+      setGeneralError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -69,7 +77,7 @@ const Register = () => {
             required
           />
           {errors.username && (
-            <div className="field-error">این نام کاربری در دسترس نیست</div>
+            <div className="field-error">{errors.username[0]}</div>
           )}
 
           <label htmlFor="">ایمیل</label>
@@ -105,9 +113,9 @@ const Register = () => {
           بازنشانی کلمه عبور
         </a>
         <p>
-          حسابی ندارید؟{" "}
-          <a className="login-link" href="/register">
-            ساختن حساب جدید
+          قبلا ثبت نام کرده اید؟{" "}
+          <a className="login-link" href="/login">
+            ورود
           </a>
         </p>
       </div>

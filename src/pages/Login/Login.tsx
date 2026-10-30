@@ -68,13 +68,14 @@ const Login = () => {
           <label htmlFor="">نام کاربری</label>
           <input
             type="text"
-            placeholder="max@email.com"
+            name="username"
+            placeholder="نام کاربری"
             value={username}
             onChange={handleUserChange}
             className={errors.username ? "error-input" : ""}
             required
           />
-          {errors.username & errors.password && (
+          {errors.username && errors.password && (
             <div className="field-error">نام کاربری یا رمز عبور اشتباه است</div>
           )}
 
